@@ -25,6 +25,7 @@ def chat():
         reply = response.choices[0].message
         return jsonify({"reply": reply})
     except Exception as e:
+        print("🔥 ERROR:", e)
         return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
