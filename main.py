@@ -21,7 +21,7 @@ def chat():
         messages = data.get("messages", [])
 
         response = client.chat.completions.create(
-            model="gpt-4",
+            model="gpt-4-turbo",
             messages=messages
         )
 
