@@ -1,3 +1,5 @@
+import traceback  # Add this at the top of your file
+
 from flask import Flask, request, jsonify
 import openai
 import os
@@ -26,6 +28,7 @@ def chat():
         return jsonify({"reply": reply})
     except Exception as e:
         print("🔥 ERROR:", e)
+        traceback.print_exc()  # This will show full error details
         return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
